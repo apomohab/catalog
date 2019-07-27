@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<form class="form-group" action='{{url_for('EditCatalouges', catalog_id=catalog_id, menu_id=i.id)}}' method='post'>
+
+<ul>
+<label>Title:</label>
+<input class="form-control"  type='text' name='title' size='8'  placeholder='{{i.title}}'>
+
+
+
+<label>Details:</label>
+<textarea class="form-control"  maxlength="250" rows="3"  type='text' name='details' size='20' value='details' placeholder='{{i.details}}'></textarea>
+
+
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Chose Category
+  </button>
+
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+<script>
+$('.dropdown-toggle').dropdown()
+
+</script>
+
+<div class="form-check">
+
+{% if i.category == 'frontend' %}
+<li><input class="form-check-input" type='radio' name='category' value='frontend' checked>FrontEnd</li>
+{% else %}
+<li><input class="form-check-input" type='radio' name='category' value='frontend'>FrontEnd</li>
+{% endif %}
+
+
+
+{% if i.category == 'backend' %}
+<li><input class="form-check-input" type='radio' name='category' value='backend' checked>BackEnd</li>
+{% else %}
+<li><input class="form-check-input" type='radio' name='category' value='backend'>Backend</li>
+{% endif %}
+
+
+
+{% if i.category == 'database' %}
+<li><input class="form-check-input" type='radio' name='category' value='database' checked>DataBase</li>
+{% else %}
+<li><input class="form-check-input" type='radio' name='category' value='database'>DataBase</li>
+{% endif %}
+
+{% if i.category == 'framework' %}
+<li><input class="form-check-input" type='radio' name='category' value='framework' checked>FrameWork</li>
+{% else %}
+<li><input class="form-check-input" type='radio' name='category' value='framework'>FrameWork</li>
+{% endif %}
+
+{% if i.category == 'cms' %}
+<li><input class="form-check-input" type='radio' name='category' value='cms' checked>CMS</li>
+{% else %}
+<li><input class="form-check-input" type='radio' name='category' value='cms'>CMS</li>
+{% endif %}
+
+</div>
+
+</ul>
+
+<button type="submit" class="btn btn-primary btn-lg btn-block btn_edit" value="edit" name="button">Edit</button>
+
+{% endblock %}
+</form>

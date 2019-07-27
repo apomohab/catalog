@@ -1,0 +1,43 @@
+body{
+
+font-family: 'Merriweather', serif;
+background-image: url("../static/back2.jpg");
+background-attachment: fixed;
+color:#fff;
+font-size: 25px;
+}
+
+
+
+.menu_top{
+
+  background-color: #75ae9b;
+  height: 90px;
+}
+
+.menu_top a{
+
+  color:#fff;
+}
+
+/**the items in menu page**/
+
+.menu_page{
+
+  color:#000;
+  text-align: justify;
+}
+
+.title_name{
+
+  color:red;
+  font-weight: bold;
+}
+
+/*edit new items*/
+
+.new_item{
+
+  text-align: center;
+  margin-top: 25px;
+}

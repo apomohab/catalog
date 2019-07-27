@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+
+
+
+<h1 class="new_item">Create New catalog</h1>
+
+<form class="form-group" action = "{{url_for('NewItem',catalog_id=catalog_id)}}" method='post'>
+
+<ul>
+<label>title</label>
+<input  class="form-control" type ='text' size='30' name='title'>
+
+<br>
+
+<label>details</label>
+<textarea  class="form-control" name='details' size='40' row='5' cols='40'></textarea>
+
+
+<br>
+
+
+
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Chose Category
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <script>$('.dropdown-toggle').dropdown()</script>
+
+
+
+<input type='radio'  name='category' value='frontend'>frontend
+<br>
+<input  type='radio' name='category' value='backend'>backend
+<br>
+<input  type='radio' name='category' value='database'>database
+<br>
+<input  type='radio' name='category' value='framework'>framework
+<br>
+<input  type='radio' name='category' value='cms'>cms
+
+
+
+<br>
+
+
+
+
+</div>
+</div>
+</ul>
+
+<button type="submit" class="btn btn-primary btn-lg btn-block btn_edit" value="send" name="button">Send</button>
+
+
+
+{% endblock %}
+</form>

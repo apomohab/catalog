@@ -1,0 +1,35 @@
+
+{% block content %}
+{% include "header.html" %}
+
+
+
+<div class="container catalog_list">
+	<div class="row">
+		<div class="col-md-12">
+
+
+			{% for catalog in catalouges %}
+
+
+						<div class="card>
+						  <img src="..." class="card-img-top " alt="...">
+						  <div class="card-body">
+						    <h5 class="card-title">{{catalog.name}}</h5>
+
+								<a class="btn btn-primary" href="{{url_for('CatalogMenu', catalog_id = catalog.id)}}">Go to Catalouges</a>
+
+
+						  </div>
+						</div>
+
+
+<hr>
+
+{% endfor %}
+{% endblock %}
+
+
+		</div>
+
+	</div>

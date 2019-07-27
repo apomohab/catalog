@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+
+
+<div class="card text-center menu_page">
+  <div class="card-header">
+    <a href="{{url_for('NewItem', catalog_id = catalog.id) }}">Add Item</a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title title_name">The {{catalog.name}} Department</h5>
+    <p class="card-text">
+
+{% for i in items %}
+
+<p>{{i.title}}</p>
+
+
+<p>{{i.details}}</p>
+
+    </p>
+
+
+
+
+    <a href='{{url_for('EditCatalouges',catalog_id = catalog.id, menu_id=i.id)}}'><button type="button" class="btn btn-secondary">Edit</button></a>
+    <a href='{{url_for('DeleteItems'  , catalog_id = catalog.id, menu_id=i.id)}}'><button type="button" class="btn btn-secondary">Delete</button></a>
+      
+<hr>
+
+      {% endfor %}
+      {% endblock %}
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
